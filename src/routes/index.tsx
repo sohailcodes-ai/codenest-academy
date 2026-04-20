@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, WHATSAPP_URL } from "@/components/site/Layout";
 import { ContactSection } from "@/components/site/ContactSection";
+import { FAQ } from "@/components/site/FAQ";
 import sohail from "@/assets/sohail.png";
 import {
   Hammer, Home, Video, Eye, Rocket, MessageCircle,
@@ -251,6 +252,9 @@ function Index() {
           <p className="mt-6 text-sm text-white/60">— Md Sohail Ali, Founder</p>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQ />
 
       {/* CONTACT */}
       <ContactSection />

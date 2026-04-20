@@ -7,6 +7,7 @@ const WA = "https://wa.me/919346003989";
 
 const links = [
   { to: "/courses", label: "Courses" },
+  { to: "/projects", label: "Projects" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
