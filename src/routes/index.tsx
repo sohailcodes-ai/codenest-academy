@@ -1,6 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, WHATSAPP_URL } from "@/components/site/Layout";
+import { ContactSection } from "@/components/site/ContactSection";
 import sohail from "@/assets/sohail.png";
 import {
   Hammer, Home, Video, Eye, Rocket, MessageCircle,
@@ -331,6 +331,4 @@ function PricingCard({ name, price, per, features, cta, featured }: typeof prici
     </div>
   );
 }
-
-import { ContactSection } from "@/components/site/ContactSection";
 export { CourseCard, PricingCard };
