@@ -1,7 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, WHATSAPP_URL } from "@/components/site/Layout";
 import { ContactSection } from "@/components/site/ContactSection";
-import { ExternalLink, ArrowRight, Monitor, MessageSquare, Brain, Salad, Globe } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import nexosImg from "@/assets/projects/nexos.jpg";
+import uncensoredChatImg from "@/assets/projects/uncensored-chat.png";
+import uncensoredAiImg from "@/assets/projects/uncensored-ai.png";
+import nutriwiseImg from "@/assets/projects/nutriwise.jpg";
+import nexaoImg from "@/assets/projects/nexao.png";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -19,7 +24,7 @@ const projects = [
   {
     name: "Nexos Desktop",
     tag: "Web OS",
-    icon: Monitor,
+    image: nexosImg,
     url: undefined,
     tone: "primary" as const,
     summary: "A fully working desktop operating system that runs in your browser — windows, apps, file system, the works.",
@@ -29,42 +34,42 @@ const projects = [
   {
     name: "uncensored.chat",
     tag: "Live Platform",
-    icon: MessageSquare,
+    image: uncensoredChatImg,
     url: "https://uncensored.chat",
     tone: "navy" as const,
-    summary: "A live chat platform deployed and running in production — real users, real uptime.",
-    case: "End-to-end build: front-end, backend API, auth, message persistence and deployment. Designed the schema, set up the streaming responses, and shipped it solo. Taught me how production differs from tutorials — rate limiting, abuse handling, and cost control matter.",
-    stack: ["Next.js", "Node", "Postgres", "Streaming"],
+    summary: "A live AI chat platform with 1000+ characters — voice, image and video features, real users in production.",
+    case: "End-to-end build: front-end, backend API, auth, message persistence and deployment. Designed the schema, integrated streaming responses, and shipped solo. Taught me how production differs from tutorials — rate limiting, abuse handling, and cost control matter.",
+    stack: ["Laravel", "Inertia", "Postgres", "Streaming"],
   },
   {
     name: "uncensored.ai",
     tag: "AI Tool",
-    icon: Brain,
+    image: uncensoredAiImg,
     url: "https://uncensored.ai",
     tone: "primary" as const,
-    summary: "An AI-powered tool live on the web — built solo, deployed solo, maintained solo.",
-    case: "Wired up multiple model providers behind a single clean interface. Handled prompt design, API key rotation, and a usage tier system. The interesting engineering was making the streaming UI feel instant on slow networks.",
-    stack: ["React", "AI APIs", "Edge Functions"],
+    summary: "An AI-powered ask-anything tool live on the web — clean dark UI, available on the App Store too.",
+    case: "Wired up multiple model providers behind a single minimal interface. Handled prompt design, API key rotation, and a usage tier system. The interesting engineering was making the streaming UI feel instant on slow networks.",
+    stack: ["Next.js", "AI APIs", "Edge Functions"],
   },
   {
     name: "NutriWise Online",
     tag: "Live Web App",
-    icon: Salad,
-    url: "https://nutriwise-online.vercel.app",
+    image: nutriwiseImg,
+    url: undefined,
     tone: "navy" as const,
-    summary: "A nutrition and meal-planning web app with a clean, friendly UI.",
-    case: "Designed and built the entire UX — onboarding, food logging, daily summaries. Focused on making the app usable on phones first, then desktop. Good practice in turning a vague idea into a shippable product.",
-    stack: ["React", "Tailwind", "Vercel"],
+    summary: "A nutrition and meal-planning web app with a clean, friendly UI — calories, macros, and daily plans.",
+    case: "Designed and built the entire UX — onboarding, food logging, daily summaries, macro tracking. Focused on making it usable on phones first, then desktop. Good practice in turning a vague idea into a shippable product.",
+    stack: ["React", "Tailwind", "Charts"],
   },
   {
     name: "nexao.in",
     tag: "Live Website",
-    icon: Globe,
+    image: nexaoImg,
     url: "https://nexao.in",
     tone: "primary" as const,
-    summary: "A production website live on a real .in domain — responsive, fast, SEO-ready.",
-    case: "Set up the domain, hosting, analytics and content from scratch. Used semantic HTML and proper meta tags so the site actually shows up in search. Small project, but a complete one from idea to live URL.",
-    stack: ["HTML", "CSS", "JS", "DNS"],
+    summary: "A production business-suite website live on a real .in domain — responsive, fast, SEO-ready.",
+    case: "Set up the domain, hosting, analytics and content from scratch. Used Next.js for SSR, semantic HTML and proper meta tags so the site actually shows up in search. A complete project from idea to live URL.",
+    stack: ["Next.js", "Tailwind", "Nginx", "DNS"],
   },
 ];
 
@@ -93,21 +98,19 @@ function ProjectsPage() {
                   key={p.name}
                   className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
                 >
-                  {/* Visual header */}
-                  <div className={`relative aspect-[16/9] w-full overflow-hidden ${isPrimary ? "bg-gradient-to-br from-primary/15 via-background to-primary/5" : "bg-gradient-to-br from-navy/15 via-background to-navy/5"}`}>
-                    <div className="absolute inset-0 [background-image:linear-gradient(to_right,oklch(0.93_0.005_260)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.93_0.005_260)_1px,transparent_1px)] [background-size:24px_24px] opacity-40" />
-                    <div className="absolute left-5 top-5 flex items-center gap-2">
-                      <span className="inline-flex h-3 w-3 rounded-full bg-destructive/70" />
-                      <span className="inline-flex h-3 w-3 rounded-full bg-primary/70" />
-                      <span className="inline-flex h-3 w-3 rounded-full bg-navy/40" />
-                    </div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className={`flex h-20 w-20 items-center justify-center rounded-2xl ring-1 ring-border shadow-card ${isPrimary ? "bg-primary text-primary-foreground" : "bg-navy text-navy-foreground"}`}>
-                        <p.icon size={36} />
-                      </div>
-                    </div>
-                    <div className="absolute right-5 top-5">
-                      <span className="rounded-full bg-background/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/70 backdrop-blur ring-1 ring-border">
+                  {/* Screenshot header */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
+                    <img
+                      src={p.image}
+                      alt={`${p.name} screenshot`}
+                      loading="lazy"
+                      width={1280}
+                      height={800}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                    <div className="absolute right-4 top-4">
+                      <span className={`rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-wider backdrop-blur ring-1 ${isPrimary ? "bg-primary/90 text-primary-foreground ring-primary/40" : "bg-navy/90 text-navy-foreground ring-navy/40"}`}>
                         {p.tag}
                       </span>
                     </div>
