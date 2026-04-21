@@ -3,10 +3,13 @@ import { Layout, WHATSAPP_URL } from "@/components/site/Layout";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FAQ } from "@/components/site/FAQ";
 import sohail from "@/assets/sohail.png";
+import nexosImg from "@/assets/projects/nexos.jpg";
+import uncensoredChatImg from "@/assets/projects/uncensored-chat.png";
+import nexaoImg from "@/assets/projects/nexao.png";
 import {
   Hammer, Home, Video, Eye, Rocket, MessageCircle,
   Code2, Globe, FileCode, Braces, Coffee, FileText,
-  Check, ArrowRight, Sparkles,
+  Check, ArrowRight, Sparkles, ExternalLink,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
