@@ -7,9 +7,9 @@ export const Route = createFileRoute("/courses")({
   head: () => ({
     meta: [
       { title: "Courses — CodeNest Academy" },
-      { name: "description", content: "Python, Web Dev, HTML & CSS, JavaScript, Java, MS Office. ₹500/month with a real project at the end. First class free." },
+      { name: "description", content: "Python, Web Dev, HTML & CSS, JavaScript, Java, MS Office. ₹499/month with a real project at the end. First class free." },
       { property: "og:title", content: "Courses — CodeNest Academy" },
-      { property: "og:description", content: "Real, project-based coding courses in Hyderabad. ₹500/month." },
+      { property: "og:description", content: "Real, project-based coding courses in Hyderabad. ₹499/month." },
     ],
   }),
   component: CoursesPage,
@@ -32,7 +32,7 @@ function CoursesPage() {
           <span className="text-xs font-semibold uppercase tracking-wider text-primary">Courses</span>
           <h1 className="mt-2 text-4xl font-semibold tracking-tight md:text-5xl">All courses, one flat price.</h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Every course is ₹500/month. First class free. End each one with a real project you built yourself.
+            Every course is ₹499/month. First class free. End each one with a real project you built yourself.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ function CoursesPage() {
                     </ul>
                     <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
                       <div>
-                        <span className="text-2xl font-semibold">₹500</span>
+                        <span className="text-2xl font-semibold">₹499</span>
                         <span className="text-xs text-muted-foreground">/month</span>
                       </div>
                       <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:brightness-105">

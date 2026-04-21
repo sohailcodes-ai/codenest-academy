@@ -7,7 +7,7 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Pricing — CodeNest Academy" },
-      { name: "description", content: "Free first class. ₹500/month online. ₹700/month for home visits in Hyderabad. No hidden fees." },
+      { name: "description", content: "Free first class. ₹499/month online. ₹799/month for home visits in Hyderabad. No hidden fees." },
       { property: "og:title", content: "Pricing — CodeNest Academy" },
       { property: "og:description", content: "Simple, honest pricing. First class always free." },
     ],
@@ -17,8 +17,8 @@ export const Route = createFileRoute("/pricing")({
 
 const plans = [
   { name: "Free Trial", price: "₹0", per: "first class", features: ["1 free demo class", "Try before you commit", "No card, no signup", "Online or home visit"], cta: "Book Free Demo", featured: false },
-  { name: "Online", price: "₹500", per: "per month", features: ["Live 1-on-1 on Google Meet", "Real project at the end", "WhatsApp doubt support", "Flexible timings", "Recordings on request"], cta: "Start Online", featured: true },
-  { name: "Home Visit", price: "₹700", per: "per month", features: ["I come to your home", "Hyderabad area only", "1-on-1 personal attention", "Parent updates included", "Flexible schedule"], cta: "Book Home Visit", featured: false },
+  { name: "Online", price: "₹499", per: "per month", features: ["Live 1-on-1 on Google Meet", "Real project at the end", "WhatsApp doubt support", "Flexible timings", "Recordings on request"], cta: "Start Online", featured: true },
+  { name: "Home Visit", price: "₹799", per: "per month", features: ["₹499 + ₹300 home visit charge", "I come to your home", "Hyderabad area only", "1-on-1 personal attention", "Parent updates included", "Flexible schedule"], cta: "Book Home Visit", featured: false },
 ];
 
 function PricingPage() {

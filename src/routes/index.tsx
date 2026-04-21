@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
 
 const features = [
   { icon: Hammer, title: "Builder, not a teacher", text: "Learn from someone who actually ships products — not just slides.", tone: "primary" },
-  { icon: Home, title: "Home visit option", text: "Prefer in-person? I come to you in Hyderabad for ₹200 extra.", tone: "navy" },
+  { icon: Home, title: "Home visit option", text: "Prefer in-person? ₹499 + ₹300 home visit charge in Hyderabad.", tone: "navy" },
   { icon: Video, title: "Online via Google Meet", text: "Live 1-on-1 sessions from anywhere. Screen-share, code together.", tone: "primary" },
   { icon: Eye, title: "Parent transparency", text: "Regular updates on progress — parents always in the loop.", tone: "navy" },
   { icon: Rocket, title: "Real project every course", text: "End each course with something you actually built and can show off.", tone: "primary" },
@@ -63,13 +63,13 @@ const pricing = [
     cta: "Book Free Demo", featured: false,
   },
   {
-    name: "Online", price: "₹500", per: "per month",
+    name: "Online", price: "₹499", per: "per month",
     features: ["Live 1-on-1 on Google Meet", "Real project at the end", "WhatsApp doubt support", "Flexible timings"],
     cta: "Start Online", featured: true,
   },
   {
-    name: "Home Visit", price: "₹700", per: "per month",
-    features: ["I come to your home", "Hyderabad area", "1-on-1 personal attention", "Parent updates included"],
+    name: "Home Visit", price: "₹799", per: "per month",
+    features: ["₹499 + ₹300 home visit charge", "I come to your home", "Hyderabad area", "1-on-1 personal attention", "Parent updates included"],
     cta: "Book Home Visit", featured: false,
   },
 ];
@@ -180,7 +180,7 @@ function Index() {
               <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
                 Pick what you want to learn.
               </h2>
-              <p className="mt-3 text-muted-foreground">All courses ₹500/month. First class free.</p>
+              <p className="mt-3 text-muted-foreground">All courses ₹499/month. First class free.</p>
             </div>
             <Link to="/courses" className="text-sm font-medium text-primary hover:underline">
               View all →
@@ -289,7 +289,7 @@ function CourseCard({ icon: Icon, name, level, desc, color }: typeof courses[num
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{desc}</p>
         <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
           <div>
-            <span className="text-xl font-semibold">₹500</span>
+            <span className="text-xl font-semibold">₹499</span>
             <span className="text-xs text-muted-foreground">/month</span>
           </div>
           <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
