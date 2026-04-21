@@ -44,6 +44,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "CodeNest Academy — Learn Real. Build Real." },
+      { name: "description", content: "A professional coding institute website for CodeNest Academy, Hyderabad." },
+      { property: "og:description", content: "A professional coding institute website for CodeNest Academy, Hyderabad." },
+      { name: "twitter:description", content: "A professional coding institute website for CodeNest Academy, Hyderabad." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/c7BfuBKm26VRWwbpQf6rVv4ncGE3/social-images/social-1776755826159-1000074798.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/c7BfuBKm26VRWwbpQf6rVv4ncGE3/social-images/social-1776755826159-1000074798.webp" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
