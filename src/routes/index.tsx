@@ -3,10 +3,13 @@ import { Layout, WHATSAPP_URL } from "@/components/site/Layout";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FAQ } from "@/components/site/FAQ";
 import sohail from "@/assets/sohail.png";
+import nexosImg from "@/assets/projects/nexos.jpg";
+import uncensoredChatImg from "@/assets/projects/uncensored-chat.png";
+import nexaoImg from "@/assets/projects/nexao.png";
 import {
   Hammer, Home, Video, Eye, Rocket, MessageCircle,
   Code2, Globe, FileCode, Braces, Coffee, FileText,
-  Check, ArrowRight, Sparkles,
+  Check, ArrowRight, Sparkles, ExternalLink,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -31,7 +34,7 @@ export const Route = createFileRoute("/")({
 
 const features = [
   { icon: Hammer, title: "Builder, not a teacher", text: "Learn from someone who actually ships products — not just slides.", tone: "primary" },
-  { icon: Home, title: "Home visit option", text: "Prefer in-person? I come to you in Hyderabad for ₹200 extra.", tone: "navy" },
+  { icon: Home, title: "Home visit option", text: "Prefer in-person? ₹499 + ₹300 home visit charge in Hyderabad.", tone: "navy" },
   { icon: Video, title: "Online via Google Meet", text: "Live 1-on-1 sessions from anywhere. Screen-share, code together.", tone: "primary" },
   { icon: Eye, title: "Parent transparency", text: "Regular updates on progress — parents always in the loop.", tone: "navy" },
   { icon: Rocket, title: "Real project every course", text: "End each course with something you actually built and can show off.", tone: "primary" },
@@ -63,13 +66,13 @@ const pricing = [
     cta: "Book Free Demo", featured: false,
   },
   {
-    name: "Online", price: "₹500", per: "per month",
+    name: "Online", price: "₹499", per: "per month",
     features: ["Live 1-on-1 on Google Meet", "Real project at the end", "WhatsApp doubt support", "Flexible timings"],
     cta: "Start Online", featured: true,
   },
   {
-    name: "Home Visit", price: "₹700", per: "per month",
-    features: ["I come to your home", "Hyderabad area", "1-on-1 personal attention", "Parent updates included"],
+    name: "Home Visit", price: "₹799", per: "per month",
+    features: ["₹499 + ₹300 home visit charge", "I come to your home", "Hyderabad area", "1-on-1 personal attention", "Parent updates included"],
     cta: "Book Home Visit", featured: false,
   },
 ];
@@ -145,6 +148,49 @@ function Index() {
         </div>
       </section>
 
+      {/* FEATURED PROJECTS STRIP */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Featured Projects</span>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
+                Real things I've shipped.
+              </h2>
+              <p className="mt-3 text-muted-foreground">A taste of what we'll teach — and what your child can build too.</p>
+            </div>
+            <Link to="/projects" className="text-sm font-medium text-primary hover:underline">
+              See all projects →
+            </Link>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              { name: "uncensored.chat", tag: "Live Platform", image: uncensoredChatImg, url: "https://uncensored.chat" },
+              { name: "Nexos Desktop", tag: "Web OS", image: nexosImg, url: undefined },
+              { name: "nexao.in", tag: "Live Website", image: nexaoImg, url: "https://nexao.in" },
+            ].map((p) => (
+              <article key={p.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
+                  <img src={p.image} alt={`${p.name} screenshot`} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+                  <span className="absolute right-3 top-3 rounded-full bg-background/90 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/80 ring-1 ring-border backdrop-blur">
+                    {p.tag}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between p-4">
+                  <h3 className="text-sm font-semibold">{p.name}</h3>
+                  {p.url && (
+                    <a href={p.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline">
+                      Visit <ExternalLink size={11} />
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHY CODENEST */}
       <section className="border-t border-border bg-soft/40">
         <div className="mx-auto max-w-6xl px-6 py-20">
@@ -180,7 +226,7 @@ function Index() {
               <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
                 Pick what you want to learn.
               </h2>
-              <p className="mt-3 text-muted-foreground">All courses ₹500/month. First class free.</p>
+              <p className="mt-3 text-muted-foreground">All courses ₹499/month. First class free.</p>
             </div>
             <Link to="/courses" className="text-sm font-medium text-primary hover:underline">
               View all →
@@ -289,7 +335,7 @@ function CourseCard({ icon: Icon, name, level, desc, color }: typeof courses[num
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{desc}</p>
         <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
           <div>
-            <span className="text-xl font-semibold">₹500</span>
+            <span className="text-xl font-semibold">₹499</span>
             <span className="text-xs text-muted-foreground">/month</span>
           </div>
           <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">

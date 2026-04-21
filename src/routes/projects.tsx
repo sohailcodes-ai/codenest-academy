@@ -5,7 +5,7 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import nexosImg from "@/assets/projects/nexos.jpg";
 import uncensoredChatImg from "@/assets/projects/uncensored-chat.png";
 import uncensoredAiImg from "@/assets/projects/uncensored-ai.png";
-import nutriwiseImg from "@/assets/projects/nutriwise.jpg";
+import nutriwiseImg from "@/assets/projects/nutriwise.png";
 import nexaoImg from "@/assets/projects/nexao.png";
 
 export const Route = createFileRoute("/projects")({
@@ -55,7 +55,7 @@ const projects = [
     name: "NutriWise Online",
     tag: "Live Web App",
     image: nutriwiseImg,
-    url: undefined,
+    url: "https://nutri-wise.online",
     tone: "navy" as const,
     summary: "A nutrition and meal-planning web app with a clean, friendly UI — calories, macros, and daily plans.",
     case: "Designed and built the entire UX — onboarding, food logging, daily summaries, macro tracking. Focused on making it usable on phones first, then desktop. Good practice in turning a vague idea into a shippable product.",
