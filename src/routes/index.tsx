@@ -148,6 +148,49 @@ function Index() {
         </div>
       </section>
 
+      {/* FEATURED PROJECTS STRIP */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Featured Projects</span>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
+                Real things I've shipped.
+              </h2>
+              <p className="mt-3 text-muted-foreground">A taste of what we'll teach — and what your child can build too.</p>
+            </div>
+            <Link to="/projects" className="text-sm font-medium text-primary hover:underline">
+              See all projects →
+            </Link>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              { name: "uncensored.chat", tag: "Live Platform", image: uncensoredChatImg, url: "https://uncensored.chat" },
+              { name: "Nexos Desktop", tag: "Web OS", image: nexosImg, url: undefined },
+              { name: "nexao.in", tag: "Live Website", image: nexaoImg, url: "https://nexao.in" },
+            ].map((p) => (
+              <article key={p.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
+                  <img src={p.image} alt={`${p.name} screenshot`} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+                  <span className="absolute right-3 top-3 rounded-full bg-background/90 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/80 ring-1 ring-border backdrop-blur">
+                    {p.tag}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between p-4">
+                  <h3 className="text-sm font-semibold">{p.name}</h3>
+                  {p.url && (
+                    <a href={p.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline">
+                      Visit <ExternalLink size={11} />
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHY CODENEST */}
       <section className="border-t border-border bg-soft/40">
         <div className="mx-auto max-w-6xl px-6 py-20">
